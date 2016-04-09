@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-6">
+        <ul>
+            <li class="l-table-border__row {headingClass}">
+                <div class="l-table-border__cell  l-table-border__heading">Ten name van</div>
+                <div class="l-table-border__cell  l-table-border__heading">Soort</div>
+                <div class="l-table-border__cell  l-table-border__heading">Rekeningnummer</div>
+            </li>
+            <li class="l-table-border__row" *ngFor="#payment of payments" (click)="select(payment)">
+                <div class="l-table-border__cell">{{payment.billingName}}
+                    <span class="is-hidden js-kvk-kenmerk">{{payment.id}}</span>
+                </div>
+                <div class="l-table-border__cell">{{payment.type}}</div>
+                <div class="l-table-border__cell">{{payment.accountNumber}}</div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentPayment">
+            <h3>Details</h3>
+            {{currentPayment.billingName}}
+        </div>
+    </div>
+</div>

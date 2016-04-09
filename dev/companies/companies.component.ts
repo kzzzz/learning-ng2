@@ -1,11 +1,20 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+import {CompanyService} from "./company.service";
 
 @Component({
     selector: 'companies',
-    template: `<div>Companies</div>`,
+    templateUrl: 'dev/companies/companies.template.html',
     directives: [],
-    providers: []
+    providers: [CompanyService]
 })
-export class CompaniesComponent {
+export class CompaniesComponent implements OnInit{
+      companies: any[];
 
+    constructor(private _service: CompanyService){
+
+    }
+
+    ngOnInit(){
+        this.companies = this._service.getCompany();
+    }
 }
