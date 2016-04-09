@@ -10,4 +10,10 @@ export class NavbarComponent {
     constructor(private _router: Router){
 
     }
+
+    isCurrentRoute(route){
+        let instruction = this._router.generate(route);
+
+        return this._router.isRouteActive(instruction);
+    }
 }
