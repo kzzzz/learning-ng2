@@ -1,11 +1,32 @@
 import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {NavbarComponent} from './navbar/navbar.component';
+import {CompaniesComponent} from './companies/companies.component';
+import {PaymentsComponent} from "./payments/payments.component";
+
+@RouteConfig([
+    {path: '/', name: 'Payments', component: PaymentsComponent, useAsDefault: true},
+    {path: '/companies', name: 'Companies', component: CompaniesComponent}
+])
 @Component({
     selector: 'app',
-    template: `<div>Payment app</div>`
+    template: `
+        <div>
+            <navbar></navbar>
+            <div class="container">
+                <router-outlet></router-outlet> 
+            </div>
+        </div>`,
+    directives: [
+        NavbarComponent,
+        CompaniesComponent,
+        PaymentsComponent,
+        ROUTER_DIRECTIVES
+    ]
 })
 
-export class AppComponent{
+export class AppComponent {
 
 }
 
