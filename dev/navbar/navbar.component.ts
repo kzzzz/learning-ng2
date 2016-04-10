@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
-    selector: 'navbar',
+    selector: 'site-navbar',
     templateUrl: './dev/navbar/navbar.template.html',
     directives: [ROUTER_DIRECTIVES]
 })

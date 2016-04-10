@@ -30,6 +30,18 @@
       "accountNumber": "***125",
       "id": "WWM6VKFQ",
       "billingName": "W. M. van Veen"
+    },
+    {
+      "type": "Online betalen",
+      "accountNumber": "***125",
+      "id": "XXXXXX",
+      "billingName": "W. M. van Veen"
+    },
+    {
+      "id": "erwerwr",
+      "type": "Incasso",
+      "accountNumber": "ING***12345",
+      "billingName": "Jan Janssen"
     }
   ],
   "purchases": {

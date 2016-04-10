@@ -38,6 +38,7 @@
             </tr>
             </tbody>
         </table>
+        <div class="btn btn-default" [routerLink]="['AddPayment']">Add</div>
     </div>
     <div class="col-md-6">
         <payment-details *ngIf="currentPayment" [payment]="currentPayment"></payment-details>
