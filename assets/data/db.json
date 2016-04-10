@@ -32,16 +32,10 @@
       "billingName": "W. M. van Veen"
     },
     {
-      "type": "Online betalen",
-      "accountNumber": "***125",
-      "id": "XXXXXX",
-      "billingName": "W. M. van Veen"
-    },
-    {
-      "id": "erwerwr",
+      "id": "ABCDE",
       "type": "Incasso",
-      "accountNumber": "ING***12345",
-      "billingName": "Jan Janssen"
+      "accountNumber": "ING123**2323",
+      "billingName": "Jan Jansen"
     }
   ],
   "purchases": {

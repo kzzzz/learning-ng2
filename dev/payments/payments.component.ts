@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {PaymentService} from './payment.service';
 import {PaymentDetailsComponent} from './details/payment-details.component';
@@ -18,7 +18,8 @@ export class PaymentsComponent implements OnInit {
     payments:any[];
     currentPayment:any;
 
-    constructor(private _service:PaymentService) {
+    constructor(private _router:Router,
+                private _service:PaymentService) {
 
     }
 
@@ -31,6 +32,17 @@ export class PaymentsComponent implements OnInit {
         this._service.getPayment(payment.id)
             .subscribe(
                 p => this.currentPayment = p,
+                e => console.log(e)
+            );
+    }
+
+    delete(payment) {
+        this._service.removePayment(payment.id)
+            .subscribe(
+                result => {
+                    console.log(result);
+                    this._router.navigate(['Payments']);
+                },
                 e => console.log(e)
             );
     }

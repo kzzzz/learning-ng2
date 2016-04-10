@@ -7,6 +7,9 @@
                 <th>Ten name van</th>
                 <th>Soort</th>
                 <th>Rekeningnummer</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -35,6 +38,7 @@
                        [routerLink]="['PaymentInvoices', {id: payment.id}]">
                     </i>
                 </td>
+                <td><i class="glyphicon glyphicon-minus-sign" (click)="delete(payment)"></i></td>
             </tr>
             </tbody>
         </table>
