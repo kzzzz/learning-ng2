@@ -14,4 +14,10 @@ export class PaymentService {
         return this._http.get(this._url)
             .map(res=> res.json());
     }
+
+    getPayment(id){
+        var url = `${this._url}/${id}`;
+        return this._http.get(url)
+            .map(res => res.json());
+    }
 }

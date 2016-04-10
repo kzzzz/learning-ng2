@@ -23,7 +23,13 @@ export class PaymentsComponent implements OnInit {
     }
 
     select(payment) {
-        this.currentPayment = payment;
+
+        this._service.getPayment(payment.id)
+            .subscribe(p=> {
+                    console.log(p);
+                    this.currentPayment = p;
+                },
+                e => console.log(e));
     }
 
     displayPurchases(payment) {
