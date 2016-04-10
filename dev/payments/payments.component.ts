@@ -1,10 +1,17 @@
 import {Component, OnInit} from 'angular2/core';
 import {PaymentService} from './payment.service';
+import {PaymentDetailsComponent} from './details/payment-details.component';
+import{PurchasesComponent} from './purchases/purchases.component';
+import{InvoicesComponent} from './invoices/invoices.component';
 
 @Component({
     selector: 'payments',
     templateUrl: './dev/payments/payments.template.html',
-    directives: [],
+    directives: [
+        PaymentDetailsComponent,
+        PurchasesComponent,
+        InvoicesComponent
+    ],
     providers: [PaymentService]
 })
 export class PaymentsComponent implements OnInit {
@@ -25,11 +32,10 @@ export class PaymentsComponent implements OnInit {
     select(payment) {
 
         this._service.getPayment(payment.id)
-            .subscribe(p=> {
-                    console.log(p);
-                    this.currentPayment = p;
-                },
-                e => console.log(e));
+            .subscribe(
+                p => this.currentPayment = p,
+                e => console.log(e)
+            );
     }
 
     displayPurchases(payment) {
@@ -41,6 +47,7 @@ export class PaymentsComponent implements OnInit {
     }
 
     toggelAutoPayment(payment) {
+        // TOdo:
         payment.isAutoPayment = !payment.isAutoPayment;
     }
 }

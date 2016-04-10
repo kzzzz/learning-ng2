@@ -31,5 +31,9 @@
       "id": "WWM6VKFQ",
       "billingName": "W. M. van Veen"
     }
-  ]
+  ],
+  "purchases": {
+    "paymentId": "AAAA",
+    "purchases": []
+  }
 }
