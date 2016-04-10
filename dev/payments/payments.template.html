@@ -25,15 +25,21 @@
                 <td>{{payment.type}}</td>
                 <td>{{payment.accountNumber}}</td>
                 <td><i class="glyphicon glyphicon-alert" (click)="select(payment)"></i></td>
-                <td><i class="glyphicon glyphicon-gift" (click)="displayPurchases(payment)"></i></td>
-                <td><i class="glyphicon glyphicon-eur" (click)="displayInvoices(payment)"></i></td>
+                <td>
+                    <i class="glyphicon glyphicon-gift"
+                       [routerLink]="['PaymentPurchases', {id: payment.id}]">
+                    </i>
+                </td>
+                <td>
+                    <i class="glyphicon glyphicon-eur"
+                       [routerLink]="['PaymentInvoices', {id: payment.id}]">
+                    </i>
+                </td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col-md-6">
         <payment-details *ngIf="currentPayment" [payment]="currentPayment"></payment-details>
-        <invoices></invoices>
-        <purchases></purchases>
     </div>
 </div>

@@ -1,4 +1,5 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+import {Router, RouteParams} from 'angular2/router';
 
 @Component({
     selector: 'invoices',
@@ -12,6 +13,16 @@ This is invoice body
     directives: [],
     providers: []
 })
-export class InvoicesComponent {
+export class InvoicesComponent implements OnInit {
+    invoices:any[];
 
+    constructor(private _router:Router,
+                private _routeParams:RouteParams) {
+    }
+
+    ngOnInit() {
+        let id = this._routeParams.get('id');
+
+        console.log('payment ID', id);
+    }
 }

@@ -1,4 +1,5 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+import {RouteParams} from 'angular2/router';
 
 @Component({
     selector: 'purchases',
@@ -13,6 +14,14 @@ This is purchase body
     directives: [],
     providers: []
 })
-export class PurchasesComponent {
+export class PurchasesComponent implements OnInit{
 
+    constructor(private _routeParams: RouteParams){
+
+    }
+
+    ngOnInit()  {
+        let id = this._routeParams.get('id');
+        console.log(id);
+    }
 }
